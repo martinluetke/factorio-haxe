@@ -1,0 +1,1 @@
+nodemon --exec "haxe build.hxml" -e "hx hxml"

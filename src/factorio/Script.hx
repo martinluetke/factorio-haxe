@@ -4,7 +4,7 @@ import factorio.classes.LuaSurface;
 import factorio.classes.LuaGuiElement;
 import factorio.Concepts;
 
-extern class TickEvent {
+extern class BaseEvent {
     /**
         Identifier of the event
     **/
@@ -16,13 +16,20 @@ extern class TickEvent {
     var tick: Int;
 }
 
-// extern class TickEvent extends Event {}
+extern class TickEvent extends BaseEvent {}
 
-extern class PlayerEvent extends TickEvent {
+extern class PlayerCreatedEvent extends BaseEvent 
+{
     var player_index: Int;
 }
 
-extern class ChunkEvent extends TickEvent {
+extern class PlayerConfiguredBlueprintEvent extends BaseEvent 
+{
+    var player_index: Int;
+}
+
+extern class ChunkEvent extends BaseEvent 
+{
     /** Area of the chunk **/
     var area: BoundingBox;
 
@@ -31,7 +38,7 @@ extern class ChunkEvent extends TickEvent {
 }
 
 /** Called when LuaGuiElement is clicked. **/
-extern class GuiClickEvent extends TickEvent 
+extern class GuiClickEvent extends BaseEvent 
 {
     /** The clicked element. **/
     var element: LuaGuiElement;
@@ -54,7 +61,7 @@ extern class GuiClickEvent extends TickEvent
 /** 
     Called when LuaGuiElement checked state is changed (related to checkboxes and radio buttons) 
 **/
-typedef GuiCheckedStateChangedEvent =
+extern class GuiCheckedStateChangedEvent extends BaseEvent 
 {
     /** The element whose checked state changed **/
     var element: LuaGuiElement;
@@ -64,7 +71,7 @@ typedef GuiCheckedStateChangedEvent =
 }
 
 /** Called when LuaGuiElement element value is changed (related to choose element buttons) **/
-extern class GuiElemChangedEvent extends TickEvent 
+extern class GuiElemChangedEvent extends BaseEvent 
 {
     /**  LuaGuiElement: The element whose selection state changed **/
     var element: LuaGuiElement;
@@ -73,19 +80,19 @@ extern class GuiElemChangedEvent extends TickEvent
     var player_index: Int;
 }
 
-typedef EventId<T> = Int
+typedef EventId<T> = Int;
 
-@:native("defines.events") 
+@:native("defines.events")
 extern class Events {
 
     /** It is fired once every tick. Since this event is fired every tick, its handler shouldn't include performance heavy code. **/
     static var on_tick: EventId<TickEvent>;
 
     /** Called after the player was created. **/
-    static var on_player_created: EventId<PlayerEvent>;
+    static var on_player_created: EventId<PlayerCreatedEvent>;
 
     /** Called when a player clicks the "confirm" button in the configure Blueprint GUI. **/
-    static var on_player_configured_blueprint: EventId<PlayerEvent>;
+    static var on_player_configured_blueprint: EventId<PlayerConfiguredBlueprintEvent>;
 
     /** Called when a chunk is generated. **/
     static var on_chunk_generated: EventId<ChunkEvent>;
@@ -187,7 +194,9 @@ extern class Script
     **/
     static public function on_init(f:Void -> Void): Void;
 
-    //* Register a handler to run on event or events.
-    @:overload(function (customEvent: String, f:TickEvent -> Void): Void {})
+    /** 
+        Register a handler to run on event or events. 
+    **/
+    @:overload(function (customEvent: String, f:BaseEvent -> Void): Void {})
     static public function on_event<T>(event: EventId<T>, f:T -> Void): Void;
 }

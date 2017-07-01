@@ -1,0 +1,8 @@
+{
+    // This is required for the VS Code Haxe Extension
+    "haxe.displayConfigurations": [ 
+        // one or more configurations for the haxe completion server
+        // ["-cp", "src", "-lua", "control.lua"] // a configuration is array of arguments passed to the completion server
+        ["build.hxml"] // hxml file is an normal haxe argument too
+    ]
+}

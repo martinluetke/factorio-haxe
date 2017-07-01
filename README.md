@@ -6,7 +6,7 @@ Heavily WIP at the moment...
 ## Requirements
 
 - Haxe latest development build,
-  from http://hxbuilds.s3-website-us-east-1.amazonaws.com/builds/haxe/windows/
+  from http://hxbuilds.s3-website-us-east-1.amazonaws.com/builds/haxe/
 - nodemon (optional), for watchmode, via Node.js' npm 
 
 ## Recommended

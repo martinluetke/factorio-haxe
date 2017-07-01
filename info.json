@@ -1,12 +1,12 @@
 // Factorio's Mod description file
 {
-  "name": "factorio-haxe",
+  "name": "factorio-haxe-demo",
   "version": "0.0.0",
   "title": "Factorio Haxe Demo",
   "author": "martinluetke",
   "contact": "",
-  "homepage": "",
-  "description": "Development Mod for creating and testing and showcasing, how to writing Factorio mods with Haxe.",
+  "homepage": "https://github.com/martinluetke/factorio-haxe",
+  "description": "Development Mod for creating, testing and showcasing how to writing Factorio mods with factorio-haxe.",
   "factorio_version": "0.15",
   "dependencies": ["base >= 0.15"]
 }

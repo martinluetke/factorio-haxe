@@ -2,9 +2,9 @@ import lua.*;
 
 import factorio.Game;
 import factorio.Script;
-import factorio.LuaGuiElement;
-import factorio.LuaPlayer;
-import factorio.LuaEntity;
+import factorio.classes.LuaGuiElement;
+import factorio.classes.LuaPlayer;
+import factorio.classes.LuaEntity;
 // import factorio.LuaControl;
 import macros.Plain;
 

@@ -1,5 +1,5 @@
-import factorio.LuaGuiElement;
-import factorio.LuaPlayer;
+import factorio.classes.LuaGuiElement;
+import factorio.classes.LuaPlayer;
 import factorio.Script;
 import factorio.Game;
 

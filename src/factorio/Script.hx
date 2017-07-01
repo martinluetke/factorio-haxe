@@ -1,6 +1,7 @@
 package factorio;
 
-import factorio.LuaSurface;
+import factorio.classes.LuaSurface;
+import factorio.classes.LuaGuiElement;
 import factorio.Concepts;
 
 extern class TickEvent {

@@ -1,6 +1,6 @@
 package factorio;
 
-import factorio.LuaPlayer;
+import factorio.classes.LuaPlayer;
 import lua.Table;
 
 @:native("game")

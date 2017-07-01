@@ -2,13 +2,11 @@ import lua.*;
 
 import factorio.Game;
 import factorio.Script;
-import factorio.classes.LuaGuiElement;
+import factorio.Remote;
 import factorio.classes.LuaPlayer;
 import factorio.classes.LuaEntity;
-// import factorio.LuaControl;
+import factorio.classes.LuaGuiElement;
 import macros.Plain;
-
-import RecordProblems;
 
 import Gui;
 
@@ -376,7 +374,7 @@ class Mod
 
     }
 
-    public function player_created(event:PlayerEvent)
+    public function player_created(event:PlayerCreatedEvent)
     {
         // var player = Game.players[event.player_index];
         
@@ -419,6 +417,9 @@ class Mod
     static public function main()
     {
         // new Mod2();
-        new Mod();
+        //new Mod();
+
+        new examples.factorio.CommandsExample();
+        // new examples.factorio.RemotesExample();
     }
 }

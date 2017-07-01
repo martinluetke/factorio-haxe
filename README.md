@@ -9,9 +9,9 @@ Heavily WIP at the moment...
   from http://hxbuilds.s3-website-us-east-1.amazonaws.com/builds/haxe/windows/
 - nodemon (optional), for watchmode, via Node.js' npm 
 
-## Recomended
+## Recommended
 
-- Visual Studio Code, with lua and haxe extensions
+- Visual Studio Code, with lua and haxe extensions, from https://code.visualstudio.com/
 
 ## Build
 

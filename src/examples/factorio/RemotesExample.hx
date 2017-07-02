@@ -26,9 +26,6 @@ class RemotesExample
         var interface1:Dynamic = {} 
         // Always assign your functions like this. Then haxe-lua wont create a self parameter. Sadly this is a neccessary hack atm ...
         interface1.hello = this.hello;
-
-        var res = interface1.hello("Hi");
-
         
         Remote.add_interface("RemotesExample", interface1);
     }

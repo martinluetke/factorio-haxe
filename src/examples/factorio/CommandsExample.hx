@@ -4,25 +4,23 @@ import factorio.Game;
 import factorio.Script;
 import factorio.Commands;
 
+/** 
+    Test the command by typing on Factorio's console (`~` key on keyboard, by default).
+    - `/help` should list our new commands at the beginning.
+    - `/help hello` should print its help string.
+    - `/hello yourname` should call *hello* with "yourname" in *event.parameter*.
+**/
 class CommandsExample
 {
     var myName = "CommandsExample";
-
+    
     public function new()
     {
-        Script.on_init(register_command);
-        Script.on_load(register_command);
-    }
-
-    /** 
-        Test the command by typing on Factorio's console (`~` key on keyboard, by default).
-        - `/help` should list our new command at the beginning.
-        - `/help hello` should print its help string.
-        - `/hello yourname` should call *hello* with "yourname" in *event.parameter*.
-    **/
-    function register_command(): Void
-    {
         Commands.add_command("hello", "<name> - Prints a greeting.", hello);
+
+        Commands.add_command("lambda", "<name> - Prints a greeting", function(event) {
+            Game.print('Hello ${event.parameter}! I am but a humble lambda function in ${this.myName}.');
+        });
     }
 
     function hello(event:CommandEvent):Void

@@ -12,10 +12,14 @@ class RemotesExample
 {
     var myName = "RemotesExample";
 
+    public static function main()
+    {
+        new RemotesExample();
+    }
+
     public function new()
     {
-        Script.on_init(this.register_interface);
-        Script.on_load(this.register_interface);
+        register_interface();
         Script.on_event(Events.on_tick, this.test_interface);
     }
 
@@ -24,7 +28,8 @@ class RemotesExample
         // Dont list the functions of your interface in the curly brackets. 
         // Haxe-lua will wrongly assume you are setting up a class method and add a hidden self parameter.
         var interface1:Dynamic = {} 
-        // Always assign your functions like this. Then haxe-lua wont create a self parameter. Sadly this is a neccessary hack atm ...
+        // Always assign your functions like this. Then haxe-lua wont create a self parameter. 
+        // Sadly this is a neccessary hack atm ...
         interface1.hello = this.hello;
         
         Remote.add_interface("RemotesExample", interface1);

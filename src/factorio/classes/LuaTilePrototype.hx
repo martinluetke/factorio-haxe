@@ -1,5 +1,6 @@
 package factorio.classes;
 
+@:luaDotMethod
 extern class LuaTilePrototype
 {
     // name :: string [R]	Name of this prototype.

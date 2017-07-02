@@ -8,6 +8,7 @@ import factorio.Concepts;
     This is an abstract base class containing the common functionality between LuaPlayer and character entities (see LuaEntity). 
     When accessing these members through a LuaEntity, it must refer to a character entity.
 **/
+@:luaDotMethod
 extern class LuaControl {
     
     // get_inventory(inventory) → LuaInventory	Get an inventory belonging to this entity.

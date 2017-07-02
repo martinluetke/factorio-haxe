@@ -4,6 +4,7 @@ import lua.Table;
 import factorio.Concepts;
 
 /** One research item. **/
+@:luaDotMethod
 extern class LuaTechnology
 {
     

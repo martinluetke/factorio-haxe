@@ -8,6 +8,7 @@ import lua.Table;
 
     Note: Every player can have a different GUI state.
 **/
+@:luaDotMethod
 extern class LuaGui 
 {
     // is_valid_sprite_path(sprite_path) → boolean	Returns true if sprite_path is valid and contains loaded sprite, otherwise false.

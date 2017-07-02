@@ -4,7 +4,7 @@ import lua.Table;
 import factorio.Concepts;
 
 
-
+@:luaDotMethod
 extern class LuaSurface
 {
     /** Get the pollution for a given position. **/

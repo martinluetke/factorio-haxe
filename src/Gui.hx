@@ -75,9 +75,7 @@ class Gui
             direction: direction
         };
 
-        var parent = this.rootElement; // workaround
-
-        return new Gui(Plain.lua(parent.add(desc)));
+        return new Gui(rootElement.add(desc));
     }
 
     public function add_button(caption:String, delegate:GuiClickEvent->Void):LuaGuiElement
@@ -89,15 +87,13 @@ class Gui
             name: elementName,
             caption: caption
         };
-
-        var parent = this.rootElement; // workaround
-
+        
         Gui.click_listeners.set(elementName, function(event:GuiClickEvent) {
             Game.print("Clicked " + event.element.name);
             delegate(event);
         });
 
-        return Plain.lua(parent.add(buttonDesc));
+        return rootElement.add(buttonDesc);
     }
 
     public function add_checkbox(caption:String, state: Bool, delegate:GuiCheckedStateChangedEvent->Void):LuaGuiElement
@@ -111,13 +107,11 @@ class Gui
             state: state
         };
 
-        var parent = this.rootElement; // workaround
-
         Gui.check_listeners.set(elementName, function(event) {
             Game.print("Checked " + event.element.name);
             delegate(event);
         });
 
-        return Plain.lua(parent.add(desc));
+        return rootElement.add(desc);
     }
 }

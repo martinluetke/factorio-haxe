@@ -5,6 +5,7 @@ package factorio.classes;
     Pay attention that a player may or may not have a character, 
     which is the LuaEntity of the little guy running around the world doing things. 
 **/
+@:luaDotMethod
 extern class LuaPlayer extends LuaControl {
 
     /** character :: LuaEntity [RW]	The character attached to this player, or nil if no character. **/

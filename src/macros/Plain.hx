@@ -7,7 +7,7 @@ import haxe.macro.ExprTools;
 /** Workaround macro for problem: player.print("foo") => player:print("foo") **/
 class Plain
 {
-    macro public static function lua(exp:Expr)
+    macro public static function lua_obsolete_thanks_god(exp:Expr)
     {
         var exp_str = ExprTools.toString(exp);
         var exp_str_escaped = StringTools.replace(exp_str,"\"","\\\"") ;

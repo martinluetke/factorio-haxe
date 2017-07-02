@@ -1,6 +1,7 @@
 package factorio.classes;
 
 /** The primary interface for interacting with entities through the Lua API. Entity is everything on the map except tiles. **/
+@:luaDotMethod
 extern class LuaEntity extends LuaControl
 {
     

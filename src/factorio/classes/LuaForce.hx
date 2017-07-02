@@ -6,6 +6,7 @@ import lua.Table;
     LuaForce encapsulates data local to each "force" or "faction" of the game. 
     Default forces are player, enemy and neutral. Players and mods can create additional forces (up to 64 total).
 **/
+@:luaDotMethod
 extern class LuaForce
 {
 

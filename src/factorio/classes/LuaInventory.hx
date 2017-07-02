@@ -1,5 +1,6 @@
 package factorio.classes;
 
+@:luaDotMethod
 extern class LuaInventory
 {
     // clear()	Make this inventory empty.

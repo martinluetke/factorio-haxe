@@ -2,7 +2,7 @@ package factorio.classes;
 
 import factorio.Concepts;
 
-
+@:luaDotMethod
 extern class LuaTile 
 {
     /**

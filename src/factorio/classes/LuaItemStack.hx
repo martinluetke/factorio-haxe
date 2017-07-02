@@ -1,5 +1,6 @@
 package factorio.classes;
 
+@:luaDotMethod
 extern class LuaItemStack
 {    
     // is_blueprint_setup() → boolean	Is this blueprint item setup?

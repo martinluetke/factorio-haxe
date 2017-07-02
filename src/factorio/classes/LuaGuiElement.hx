@@ -38,6 +38,7 @@ typedef FrameDesc =
     @:optional var style:String;
 }
 
+@:luaDotMethod
 extern class LuaGuiElement 
 {
     

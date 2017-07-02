@@ -191,8 +191,31 @@ extern class Script
         once when a save file is loaded that previously didn't contain the mod. 
         This is always called before other event handlers and is meant for 
         setting up initial values that a mod will use for its lifetime.
+
+        Parameters
+            f :: function(): The function to call. Passing nil will unregister the handler.
     **/
     static public function on_init(f:Void -> Void): Void;
+
+    /**
+        Register a function to be run on module load. 
+        This is called every time a save file is loaded *except* for the instance 
+        when a mod is loaded into a save file that it previously wasn't part of. 
+        Additionally this is called when connecting to any other game in a 
+        multiplayer session and should never change the game state.
+
+        This is meant for 3 specific reasons and only 3:
+
+        - re-register conditional event handlers
+        - re-setup meta tables
+        - create local references to tables stored in the global table
+        - In all other instances the LuaBootstrap::on_init, LuaBootstrap::on_configuration_changed or migration scripts should be used. 
+          Doing any other logic when loading a save file can break the replay and cause desync issues if the mod is used in multiplayer.
+
+        Parameters
+            f :: function(): The function to call. Passing nil will unregister the handler.
+    **/
+    static public function on_load(f:Void -> Void): Void;
 
     /** 
         Register a handler to run on event or events. 

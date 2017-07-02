@@ -4,10 +4,10 @@ import factorio.Game;
 import factorio.Script;
 import factorio.Remote;
 
-// import lua.Table;
-
 class RemotesExample
 {
+    var myName = "RemotesExample";
+
     public function new()
     {
         Script.on_event(Events.on_player_created, player_created);
@@ -18,16 +18,21 @@ class RemotesExample
         // var player = Game.players[event.player_index];
         Game.print("Registering remote interface...");
 
-        var intrface:Dynamic = {
-            hello:hello
-        };
+        var interface1:Dynamic = {}
+        interface1.hello = hello;
 
-        Remote.add_interface("remotes_example", intrface);
+        Remote.add_interface("remotes_example", interface1);
+
+        Game.print("Making a test call...");
+
+        var result:String = Remote.call("remotes_example","hello","Test Call");
+
+        Game.print("Received: " + result);
     }
 
     function hello(name:String):String
     {
-        Game.print('Hello $name!');
+        Game.print('Hello $name! $myName greets you.');
 
         return "Bye...";
     }

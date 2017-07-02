@@ -52,7 +52,7 @@ extern class Remote
             function :: string: Function name that belongs to interface.
             ...: Arguments to pass to the called function.
     **/
-    public static function call(intrface:String, func:String, params:Array<Expr>):Dynamic;
+    public static function call(intrface:String, func:String, ?param1:Dynamic, ?param2:Dynamic, ?param3:Dynamic, ?param4:Dynamic, ?param5:Dynamic):Dynamic;
 
     /**
         list of all registered interfaces. For each interface name, remote.interfaces[name] is a dictionary mapping the interface's registered functions to the value true.

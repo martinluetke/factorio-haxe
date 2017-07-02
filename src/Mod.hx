@@ -414,10 +414,7 @@ class Mod
 
     static public function main()
     {
-        // new Mod2();
-        // new Mod();
-
-        // new examples.factorio.CommandsExample();
-        new examples.factorio.RemotesExample();
+        new examples.factorio.CommandsExample();
+        // new examples.factorio.RemotesExample();
     }
 }

@@ -1,14 +1,27 @@
 package factorio;
 
 
+extern class CommandEvent 
+{
+    /** Command's name **/
+    public var name: String;
+
+    /** Player who typed the command on her console. **/
+    public var player_index: Int;
+
+    /** tick **/
+    public var tick: Int;
+
+    /** Parameter(s) written after command. (Happy parsing... ;) ) **/
+    public var parameter: String;
+}
+
 /**
     Custom game console commands.
 **/
 @:native("commands")
 extern class Commands 
 {
-    
-    // add_command(name, help, function)	Add a command.
     /**
         Add a command.
 
@@ -18,8 +31,15 @@ extern class Commands
             function :: function: The function that will be called when this command is invoked.
         Note: It is an error if the given command name is already registered or already exists as a game command.
     **/
-    public static function add_command(name:String, help:String, func:Dynamic): Void;
-    // remove_command(string) → boolean	Removes a registered command
+    public static function add_command(name:String, help:String, func:CommandEvent -> Void): Void;
+
+    /**
+        Removes a registered command
+        Return value
+            If the command was removed. False if the command didn't exist.
+    **/
+    public static function remove_command(name:String):Bool;
+
     // commands :: dictionary string → LocalisedString [R]	The script registered commands
     // game_commands :: dictionary string → LocalisedString [R]	The script registered commands
 

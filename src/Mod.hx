@@ -2,7 +2,6 @@ import lua.*;
 
 import factorio.Game;
 import factorio.Script;
-import factorio.Remote;
 import factorio.classes.LuaPlayer;
 import factorio.classes.LuaEntity;
 import factorio.classes.LuaGuiElement;
@@ -307,6 +306,7 @@ class ResearchAllButtonMod implements SubMod
         else
         {
             research = new Map();
+
             PairTools.pairsEach(player.force.technologies, function(name,tech) {
                 research.set(name,tech.researched);
                 tech.researched = true;
@@ -409,17 +409,15 @@ class Mod
 
         var tiles = Table.create();
         Table.insert(tiles, {name:"grass", position: event.area.left_top});
-        Plain.lua(surface.set_tiles(tiles));
-
-
+        surface.set_tiles(tiles);
     }
 
     static public function main()
     {
         // new Mod2();
-        //new Mod();
+        // new Mod();
 
-        new examples.factorio.CommandsExample();
-        // new examples.factorio.RemotesExample();
+        // new examples.factorio.CommandsExample();
+        new examples.factorio.RemotesExample();
     }
 }

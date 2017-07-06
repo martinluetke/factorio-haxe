@@ -20,6 +20,7 @@ class RemotesExample
     public function new()
     {
         register_interface();
+        
         Script.on_event(Events.on_tick, this.test_interface);
     }
 

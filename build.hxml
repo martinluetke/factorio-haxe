@@ -1,8 +1,8 @@
 -cp ./extern/
 -cp ./src/
 --each
--main Mod
--lua control.lua
+# -main Mod
+# -lua control.lua
 # --next
-# -main examples.factorio.RemotesExample
-# -lua control.example.lua
+-main examples.factorio.IncludeLuaExample
+-lua control.lua

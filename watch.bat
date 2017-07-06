@@ -1,1 +1,1 @@
-nodemon --exec "haxe build.hxml" -e "hx hxml"
+nodemon --exec "haxe build.hxml" -e "hx hxml lua"
